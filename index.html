@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="王珮珊的個人介紹與履歷 - 一句話介紹不了的有趣靈魂。熱愛出去玩、看電影、吃美食，以及正在密謀一場世紀大冒險。">
+  <title>王珮珊 | 一句話介紹不了的個人檔案</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================
+       CSS VARIABLES & RESET
+       ========================================= */
+    :root {
+      --bg-dark: #0a1128;
+      --bg-card: rgba(16, 26, 56, 0.7);
+      --bg-card-hover: rgba(22, 36, 77, 0.85);
+      --primary-blue: #0077fe;
+      --cyan-glow: #00d2ff;
+      --primary-orange: #ff5e13;
+      --neon-orange: #ff8c00;
+      --accent-yellow: #ffb703;
+      --text-main: #f0f4fc;
+      --text-muted: #94a3b8;
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --border-blue: rgba(0, 119, 254, 0.35);
+      --border-orange: rgba(255, 94, 19, 0.35);
+      --font-base: 'Noto Sans TC', sans-serif;
+      --font-display: 'Outfit', 'Noto Sans TC', sans-serif;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-base);
+      line-height: 1.65;
+      overflow-x: hidden;
+      position: relative;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 119, 254, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 85% 35%, rgba(255, 94, 19, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(0, 210, 255, 0.15) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    /* Ambient background grid pattern */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* =========================================
+       TYPOGRAPHY & UTILITIES
+       ========================================= */
+    h1, h2, h3, .brand-font {
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .gradient-text-blue {
+      background: linear-gradient(135deg, #00d2ff 0%, #0077fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-orange {
+      background: linear-gradient(135deg, #ff9e00 0%, #ff5e13 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-combo {
+      background: linear-gradient(135deg, #00d2ff 0%, #ff9e00 50%, #ff5e13 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* =========================================
+       HEADER & NAVIGATION
+       ========================================= */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(10, 17, 40, 0.75);
+      border-bottom: 1px solid var(--border-glass);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 1.35rem;
+      font-weight: 900;
+      font-family: var(--font-display);
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-orange));
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(255, 94, 19, 0.35);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan-glow), var(--primary-orange));
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.55rem 1.2rem;
+      border-radius: 99px;
+      background: linear-gradient(135deg, var(--primary-orange), #ff8c00);
+      color: #fff !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 15px rgba(255, 94, 19, 0.4);
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 22px rgba(255, 94, 19, 0.6);
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+
+    /* =========================================
+       HERO SECTION
+       ========================================= */
+    .hero-section {
+      padding-top: 150px;
+      padding-bottom: 90px;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1.1rem;
+      background: rgba(0, 119, 254, 0.15);
+      border: 1px solid var(--border-blue);
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cyan-glow);
+      margin-bottom: 1.4rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--primary-orange);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--primary-orange);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 94, 19, 0.7); }
+      70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(255, 94, 19, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 94, 19, 0); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-quote-box {
+      position: relative;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid var(--primary-orange);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 16px 16px 0;
+      margin-bottom: 1.8rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-quote-text {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-quote-sub {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 2.2rem;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border: none;
+    }
+
+    .btn-orange {
+      background: linear-gradient(135deg, var(--primary-orange) 0%, #ff8c00 100%);
+      color: #fff;
+      box-shadow: 0 10px 25px -5px rgba(255, 94, 19, 0.45);
+    }
+
+    .btn-orange:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(255, 94, 19, 0.6);
+    }
+
+    .btn-blue-outline {
+      background: rgba(0, 119, 254, 0.1);
+      color: var(--cyan-glow);
+      border: 1px solid var(--border-blue);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-blue-outline:hover {
+      background: rgba(0, 119, 254, 0.25);
+      border-color: var(--cyan-glow);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(0, 210, 255, 0.35);
+    }
+
+    /* Hero Visual Card */
+    .hero-avatar-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 119, 254, 0.15);
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+
+    .hero-avatar-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 94, 19, 0.4);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 94, 19, 0.2);
+    }
+
+    .avatar-wrapper {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--cyan-glow), var(--primary-orange));
+      box-shadow: 0 10px 30px rgba(0, 119, 254, 0.4);
+      position: relative;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #111a38;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      user-select: none;
+    }
+
+    .avatar-badge-float {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: var(--primary-orange);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 99px;
+      border: 2px solid var(--bg-dark);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .profile-card-name {
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .profile-card-role {
+      font-size: 0.9rem;
+      color: var(--cyan-glow);
+      font-weight: 600;
+      margin-bottom: 1.4rem;
+    }
+
+    .quick-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      text-align: left;
+    }
+
+    .quick-stat-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+    }
+
+    .quick-stat-num {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+      display: block;
+    }
+
+    .quick-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Floating tags around avatar card */
+    .floating-pill {
+      position: absolute;
+      background: rgba(10, 17, 40, 0.9);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem 1rem;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      animation: float 4s ease-in-out infinite alternate;
+    }
+
+    .floating-pill-1 {
+      top: -15px;
+      left: -20px;
+      border-color: var(--border-blue);
+      color: var(--cyan-glow);
+    }
+
+    .floating-pill-2 {
+      bottom: -15px;
+      right: -15px;
+      border-color: var(--border-orange);
+      color: var(--neon-orange);
+      animation-delay: -2s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* =========================================
+       SECTION COMMON STYLES
+       ========================================= */
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.8rem auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--primary-orange);
+      background: rgba(255, 94, 19, 0.12);
+      border: 1px solid var(--border-orange);
+      padding: 0.35rem 0.9rem;
+      border-radius: 99px;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* =========================================
+       HOBBIES / THREE PASSIONS SECTION
+       ========================================= */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    .hobby-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      padding: 2.2rem 1.8rem;
+      backdrop-filter: blur(14px);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hobby-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-blue), var(--primary-orange));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: var(--bg-card-hover);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .hobby-card:hover::before {
+      opacity: 1;
+    }
+
+    .hobby-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon-blue {
+      background: linear-gradient(135deg, rgba(0, 119, 254, 0.3), rgba(0, 210, 255, 0.15));
+      border: 1px solid var(--border-blue);
+    }
+
+    .icon-orange {
+      background: linear-gradient(135deg, rgba(255, 94, 19, 0.3), rgba(255, 140, 0, 0.15));
+      border: 1px solid var(--border-orange);
+    }
+
+    .icon-combo {
+      background: linear-gradient(135deg, rgba(0, 119, 254, 0.25), rgba(255, 94, 19, 0.25));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hobby-title {
+      font-size: 1.45rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hobby-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--cyan-glow);
+      margin-bottom: 1rem;
+    }
+
+    .hobby-desc {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .hobby-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .mini-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 0.25rem 0.55rem;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+    }
+
+    /* =========================================
+       MASTER SKILL / HEIST SECTION
+       ========================================= */
+    .skills-section {
+      background: linear-gradient(180deg, rgba(10, 17, 40, 0) 0%, rgba(13, 23, 54, 0.6) 50%, rgba(10, 17, 40, 0) 100%);
+    }
+
+    .heist-container {
+      background: linear-gradient(135deg, rgba(16, 26, 56, 0.9) 0%, rgba(26, 17, 40, 0.85) 100%);
+      border: 1px solid var(--border-orange);
+      border-radius: 32px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 25px 60px -15px rgba(255, 94, 19, 0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .heist-container::after {
+      content: "TOP SECRET";
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: rgba(255, 94, 19, 0.07);
+      transform: rotate(-8deg);
+      pointer-events: none;
+      font-family: var(--font-display);
+    }
+
+    .heist-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .heist-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--neon-orange);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+
+    .heist-heading {
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .heist-text {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Skill bars */
+    .skill-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .skill-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-track {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 99px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fill-orange {
+      background: linear-gradient(90deg, var(--neon-orange), var(--primary-orange));
+      box-shadow: 0 0 12px rgba(255, 94, 19, 0.5);
+    }
+
+    .fill-blue {
+      background: linear-gradient(90deg, var(--cyan-glow), var(--primary-blue));
+      box-shadow: 0 0 12px rgba(0, 119, 254, 0.5);
+    }
+
+    /* Interactive Safe / Vault Box */
+    .vault-widget {
+      background: rgba(10, 17, 40, 0.7);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .vault-dial-box {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 6px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.6), 0 8px 25px rgba(0, 119, 254, 0.2);
+      transition: var(--transition-smooth);
+    }
+
+    .vault-dial-box:hover {
+      border-color: var(--cyan-glow);
+      transform: scale(1.05);
+    }
+
+    .vault-dial-center {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary-orange), var(--neon-orange));
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 94, 19, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .vault-dial-ticks {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 255, 255, 0.15);
+      transition: transform 0.6s ease;
+    }
+
+    .vault-status-text {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .vault-reward-box {
+      background: rgba(0, 210, 255, 0.08);
+      border: 1px dashed var(--cyan-glow);
+      border-radius: 14px;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #fff;
+      display: none;
+      animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* =========================================
+       PHILOSOPHY / FUN FACTS SECTION
+       ========================================= */
+    .fun-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .fun-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      padding: 1.8rem;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .fun-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-blue);
+      transform: translateY(-4px);
+    }
+
+    .fun-icon {
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.04);
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fun-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .fun-content p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       CONTACT & FOOTER
+       ========================================= */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(0, 119, 254, 0.12) 0%, rgba(255, 94, 19, 0.12) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 30px;
+      padding: 4rem 2.5rem;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      position: relative;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .contact-card p {
+      color: #cbd5e1;
+      max-width: 560px;
+      margin: 0 auto 2.5rem auto;
+      font-size: 1.1rem;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .site-footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* =========================================
+       SCROLL ANIMATIONS
+       ========================================= */
+    .fade-on-scroll {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .fade-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    /* =========================================
+       RESPONSIVE DESIGN (MOBILE & TABLET)
+       ========================================= */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+
+      .status-pill {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-quote-box {
+        border-left: none;
+        border-top: 3px solid var(--primary-orange);
+        border-radius: 16px;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-avatar-card {
+        max-width: 440px;
+        margin: 0 auto;
+      }
+
+      .hobbies-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .heist-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .fun-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 17, 40, 0.96);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 1.4rem;
+        border-bottom: 1px solid var(--border-glass);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-section {
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+
+      .heist-container {
+        padding: 2.2rem 1.5rem;
+      }
+
+      .contact-card {
+        padding: 2.8rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo" id="nav-logo">
+        <span class="logo-badge">PS</span>
+        <span>王珮珊</span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobile-toggle" aria-label="切換選單">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#about" class="nav-item">關於我</a></li>
+        <li><a href="#passions" class="nav-item">人生三寶</a></li>
+        <li><a href="#skills" class="nav-item">作案技能</a></li>
+        <li><a href="#philosophy" class="nav-item">秘密檔案</a></li>
+        <li><a href="#contact" class="nav-cta">招募同夥 🤝</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column: Copywriting -->
+          <div class="hero-content fade-on-scroll">
+            <div class="status-pill">
+              <span class="pulse-dot"></span>
+              <span>狀態：尋找同夥中・隨時準備出發 🚀</span>
+            </div>
+
+            <h1 class="hero-title">
+              嗨，我是 <br>
+              <span class="gradient-text-combo">王珮珊</span>
+            </h1>
+
+            <div class="hero-quote-box">
+              <span class="hero-quote-text">「一句話介紹自己？—— 一句話介紹不了。」</span>
+              <span class="hero-quote-sub">因為太豐富、太難捉摸，所以留白讓你親自認識。</span>
+            </div>
+
+            <p class="hero-desc">
+              日常身份是踩點冒險家、電影鑑賞狂與碳水愛好者；
+              秘密夢想是哪天一起去搶個大銀行（或至少搶先吃到剛出爐的甜點）。
+              喜歡所有好玩、有趣且不按牌理出牌的人事物！
+            </p>
+
+            <div class="hero-actions">
+              <a href="#passions" class="btn btn-orange" id="btn-explore">
+                <span>🔥 探索我的愛好</span>
+                <span>↓</span>
+              </a>
+              <a href="#skills" class="btn btn-blue-outline" id="btn-heist-plan">
+                <span>💰 檢視金庫計畫</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Profile Card -->
+          <div class="hero-avatar-card fade-on-scroll delay-1">
+            <div class="floating-pill floating-pill-1">
+              <span>✈️</span> 隨時準備逃跑
+            </div>
+            <div class="floating-pill floating-pill-2">
+              <span>🍿</span> 爆米花消滅者
+            </div>
+
+            <div class="avatar-wrapper">
+              <div class="avatar-inner" id="avatar-emoji">
+                😎
+              </div>
+              <span class="avatar-badge-float">LV.99</span>
+            </div>
+
+            <h2 class="profile-card-name">王珮珊</h2>
+            <p class="profile-card-role">首席生活探險家 / 機密計畫發起人</p>
+
+            <div class="quick-stats-grid">
+              <div class="quick-stat-box">
+                <span class="quick-stat-num gradient-text-orange">3 大</span>
+                <span class="quick-stat-label">終極生活志趣</span>
+              </div>
+              <div class="quick-stat-box">
+                <span class="quick-stat-num gradient-text-blue">100%</span>
+                <span class="quick-stat-label">有趣靈魂濃度</span>
+              </div>
+              <div class="quick-stat-box">
+                <span class="quick-stat-num gradient-text-blue">0 句</span>
+                <span class="quick-stat-label">能框住我的話</span>
+              </div>
+              <div class="quick-stat-box">
+                <span class="quick-stat-num gradient-text-orange">S 級</span>
+                <span class="quick-stat-label">美食雷達探測度</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ABOUT & PHILOSOPHY -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header fade-on-scroll">
+          <span class="section-tag">PERSONAL TRAITS</span>
+          <h2 class="section-title">為什麼說「一句話介紹不了」？</h2>
+          <p class="section-subtitle">如果能被貼上一張標籤，那多無聊。這裡有幾個關於我的不可思議真實設定：</p>
+        </div>
+
+        <div class="fun-grid">
+          <div class="fun-card fade-on-scroll delay-1">
+            <div class="fun-icon">🗺️</div>
+            <div class="fun-content">
+              <h3>拒絕被定義</h3>
+              <p>今天可能在咖啡廳優雅看劇，明天可能已經在海邊吹風涉水。人生太短，多變才是常態。</p>
+            </div>
+          </div>
+
+          <div class="fun-card fade-on-scroll delay-2">
+            <div class="fun-icon">🍔</div>
+            <div class="fun-content">
+              <h3>吃貨本能驅動</h3>
+              <p>別問我導航靠什麼，我體內內建了米其林與街頭小吃雙重指南針，只要有好吃的，多遠都會到。</p>
+            </div>
+          </div>
+
+          <div class="fun-card fade-on-scroll delay-1">
+            <div class="fun-icon">🎬</div>
+            <div class="fun-content">
+              <h3>劇透免役體質</h3>
+              <p>看電影注重的是沉浸感與細節。看片時腦袋都在分析「這部戲裡的主角逃跑路線到底合不合邏輯」。</p>
+            </div>
+          </div>
+
+          <div class="fun-card fade-on-scroll delay-2">
+            <div class="fun-icon">🕶️</div>
+            <div class="fun-content">
+              <h3>行動力破表</h3>
+              <p>說走就走不是口號，而是日常習慣。只要有好玩的揪團，我的行囊永遠是收好狀態！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: HOBBIES (THREE CORE PASSIONS) -->
+    <section id="passions">
+      <div class="container">
+        <div class="section-header fade-on-scroll">
+          <span class="section-tag">THREE PILLARS</span>
+          <h2 class="section-title">支撐生活的三大本命</h2>
+          <p class="section-subtitle">人生不需要太複雜，只要有這三件事，每天都能活力充沛！</p>
+        </div>
+
+        <div class="hobbies-grid">
+          <!-- Hobby 1 -->
+          <div class="hobby-card fade-on-scroll delay-1">
+            <div class="hobby-icon-wrap icon-blue">
+              🏕️
+            </div>
+            <h3 class="hobby-title">出去玩</h3>
+            <span class="hobby-badge">#戶外踩點 #逃離地表</span>
+            <p class="hobby-desc">
+              不論是週末快閃、露營踩點還是公路旅行，只要能踏出家門看世界，就能瞬間回血 100%。在家坐不住是天性，隨時隨地都在計畫下一次流浪！
+            </p>
+            <div class="hobby-tags">
+              <span class="mini-tag">戶外探險</span>
+              <span class="mini-tag">說走就走</span>
+              <span class="mini-tag">拍好看照</span>
+            </div>
+          </div>
+
+          <!-- Hobby 2 -->
+          <div class="hobby-card fade-on-scroll delay-2">
+            <div class="hobby-icon-wrap icon-orange">
+              🍿
+            </div>
+            <h3 class="hobby-title">看電影</h3>
+            <span class="hobby-badge">#沉浸式體驗 #細節放大鏡</span>
+            <p class="hobby-desc">
+              電影院黃金 C 位的守護者。懸疑、動作、科幻或喜劇通通來者不拒！爆米花通常在片頭商標播放完畢前就會見底，對好劇本毫無抵抗力。
+            </p>
+            <div class="hobby-tags">
+              <span class="mini-tag">大銀幕控</span>
+              <span class="mini-tag">劇情剖析</span>
+              <span class="mini-tag">爆米花消滅</span>
+            </div>
+          </div>
+
+          <!-- Hobby 3 -->
+          <div class="hobby-card fade-on-scroll delay-3">
+            <div class="hobby-icon-wrap icon-combo">
+              🍜
+            </div>
+            <h3 class="hobby-title">吃好吃的</h3>
+            <span class="hobby-badge">#靈魂補給站 #熱量就是正義</span>
+            <p class="hobby-desc">
+              這世上沒有任何難題是一頓美食解決不了的；如果不行，那就吃兩頓！專門蒐集口袋名單，對於隱藏版小吃和精緻甜點擁有極敏銳的第七感。
+            </p>
+            <div class="hobby-tags">
+              <span class="mini-tag">巷弄美食</span>
+              <span class="mini-tag">甜點鑑賞</span>
+              <span class="mini-tag">消夜雷達</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SKILLS & HEIST PLAN -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="heist-container fade-on-scroll">
+          <div class="heist-grid">
+            <!-- Left Info -->
+            <div>
+              <div class="heist-badge">
+                <span>⚠️</span>
+                <span>CLASSIFIED MISSION</span>
+              </div>
+              <h2 class="heist-heading">
+                特殊專長與終極志向：<br>
+                <span class="gradient-text-orange">搶銀行計畫</span> 🏦
+              </h2>
+              <p class="heist-text">
+                「真正的藝術在於精準的策劃與優雅的撤退。」<br>
+                雖然目前還在研究金庫藍圖（還有超商滿額贈品集點卡），但我已經把各項生存與實戰技能點滿了：
+              </p>
+
+              <!-- Progress skill bars -->
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">🏃 逃跑速度（下班/下課第一名）</span>
+                    <span class="gradient-text-orange">99%</span>
+                  </div>
+                  <div class="skill-track">
+                    <div class="skill-fill fill-orange" style="width: 99%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">🔍 美食與金庫弱點偵查力</span>
+                    <span class="gradient-text-blue">95%</span>
+                  </div>
+                  <div class="skill-track">
+                    <div class="skill-fill fill-blue" style="width: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">🔐 密碼破解運氣（大多靠直覺）</span>
+                    <span class="gradient-text-orange">77%</span>
+                  </div>
+                  <div class="skill-track">
+                    <div class="skill-fill fill-orange" style="width: 77%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">🤝 招募有趣同夥的魅力</span>
+                    <span class="gradient-text-blue">100%</span>
+                  </div>
+                  <div class="skill-track">
+                    <div class="skill-fill fill-blue" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Interactive Safe Vault -->
+            <div class="vault-widget" id="vault-box">
+              <div class="vault-dial-box" id="vault-dial" title="點擊轉動解鎖金庫">
+                <div class="vault-dial-ticks" id="dial-ticks"></div>
+                <div class="vault-dial-center">🔓</div>
+              </div>
+
+              <div class="vault-status-text" id="vault-status">
+                點擊上方轉盤嘗試破解保險箱
+              </div>
+
+              <button class="btn btn-orange" id="btn-crack-vault" style="width: 100%; justify-content: center;">
+                ⚡ 執行解鎖協議
+              </button>
+
+              <div class="vault-reward-box" id="vault-reward">
+                🎉 <b>金庫開啟成功！</b><br>
+                獲得物品：王珮珊的終生好友位一張 🎟️<br>
+                <small style="color: #94a3b8;">（附贈一起看電影＋吃消夜特權）</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CONTACT / CALL TO ACTION -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card fade-on-scroll">
+          <span class="section-tag">JOIN THE CREW</span>
+          <h2>準備好一起幹大事了嗎？</h2>
+          <p>
+            不管是想揪團出門玩、看最新院線片、踩點超強餐廳，還是想密謀一場驚天動地的冒險計畫——歡迎隨時加入珮珊的同夥行列！
+          </p>
+          <div class="contact-buttons">
+            <a href="mailto:contact@example.com" class="btn btn-orange" id="btn-email-me">
+              ✉️ 發送秘密電報
+            </a>
+            <button class="btn btn-blue-outline" id="btn-copy-link">
+              🔗 複製這份機密檔案
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 王珮珊 (Pei-Shan Wang) • 一句話介紹不了的有趣人類</p>
+      <p style="font-size: 0.8rem; color: #64748b;">
+        本網頁所有搶銀行言論純屬幽默，請勿報警 🚓 | 主色系：藍色 ✕ 橘色
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navItems = document.querySelectorAll('.nav-item, .nav-cta');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileToggle.textContent = '☰';
+      });
+    });
+
+    // 2. Interactive Avatar Click Reaction
+    const avatar = document.getElementById('avatar-emoji');
+    const funEmojis = ['😎', '🕵️‍♀️', '🍕', '🚀', '🤠', '🍿', '💃', '💰'];
+    let emojiIndex = 0;
+
+    avatar.addEventListener('click', () => {
+      emojiIndex = (emojiIndex + 1) % funEmojis.length;
+      avatar.textContent = funEmojis[emojiIndex];
+      avatar.style.transform = 'scale(1.2) rotate(15deg)';
+      setTimeout(() => {
+        avatar.style.transform = 'scale(1) rotate(0deg)';
+      }, 250);
+    });
+
+    // 3. Vault Cracking Interactive Feature
+    const vaultDial = document.getElementById('vault-dial');
+    const dialTicks = document.getElementById('dial-ticks');
+    const crackBtn = document.getElementById('btn-crack-vault');
+    const vaultStatus = document.getElementById('vault-status');
+    const vaultReward = document.getElementById('vault-reward');
+    let dialRotation = 0;
+    let clickCount = 0;
+
+    function handleVaultCrack() {
+      clickCount++;
+      dialRotation += 120;
+      dialTicks.style.transform = `rotate(${dialRotation}deg)`;
+
+      if (clickCount < 3) {
+        vaultStatus.innerHTML = `正在對齊第 ${clickCount}/3 道密碼鎖... ⚙️`;
+        vaultStatus.style.color = '#ff9e00';
+      } else {
+        vaultStatus.innerHTML = `密碼破譯完成！金庫全開！💥`;
+        vaultStatus.style.color = '#00d2ff';
+        vaultReward.style.display = 'block';
+        crackBtn.textContent = '✅ 已完全破解！';
+        crackBtn.style.opacity = '0.7';
+        crackBtn.style.pointerEvents = 'none';
+      }
+    }
+
+    vaultDial.addEventListener('click', handleVaultCrack);
+    crackBtn.addEventListener('click', handleVaultCrack);
+
+    // 4. Copy Link Button with notification
+    const copyBtn = document.getElementById('btn-copy-link');
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = '✅ 已複製連結！快傳給同夥';
+        setTimeout(() => {
+          copyBtn.textContent = originalText;
+        }, 2200);
+      }).catch(() => {
+        alert('請直接複製網址分享！');
+      });
+    });
+
+    // 5. Scroll Fade-in Animation (IntersectionObserver)
+    const fadeElements = document.querySelectorAll('.fade-on-scroll');
+    const observerOptions = {
+      root: null,
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    fadeElements.forEach(el => scrollObserver.observe(el));
+  </script>
+</body>
+</html>
